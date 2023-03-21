@@ -1,0 +1,48 @@
+{
+  "name": "react-use-confirm-alert",
+  "version": "1.0.8",
+  "license": "MIT",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -cw"
+  },
+  "author": "Shohel Rana",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shohelrana-dev/react-use-confirm-alert"
+  },
+  "homepage": "https://github.com/shohelrana-dev/react-use-confirm-alert",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-loader-spinner": "^5.3.4",
+    "react-minimal-modal": "^1.0.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "rollup": "^3.19.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^4.9.5"
+  },
+  "keywords": [
+    "react-confirm-alert",
+    "react-component",
+    "confirm alert modal",
+    "react-use-confirm",
+    "dialog",
+    "modal"
+  ]
+}

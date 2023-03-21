@@ -1,0 +1,58 @@
+.modalCustom{
+    max-width: 385px !important;
+}
+
+.message{
+    color: rgb(66 66 66);
+    margin: 0;
+}
+
+.footer{
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 3px;
+}
+
+.buttonConfirm{
+    background: #0079d3;
+    color: #fff;
+    font-size: 14px;
+    margin: 0;
+    padding: 0 18px;
+    height: 35px;
+    border-radius: 20px;
+    min-width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.buttonConfirm:disabled{
+    background: #0079d3a6;
+    cursor: progress;
+}
+
+.buttonCancel{
+    background: #fff;
+    margin: 0;
+    padding: 0 18px;
+    height: 35px;
+    font-size: 14px;
+    color: #000;
+    border-radius: 20px;
+    min-width: 80px;
+    transition: .2s;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.buttonCancel:hover{
+    background: #dddddd38;
+}
