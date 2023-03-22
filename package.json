@@ -1,6 +1,6 @@
 {
   "name": "react-use-confirm-alert",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "license": "MIT",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
@@ -19,7 +19,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loader-spinner": "^5.3.4",
-    "react-minimal-modal": "^1.0.7"
+    "react-minimal-modal": "^1.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",
