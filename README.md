@@ -8,25 +8,22 @@ To install, you can use [npm](https://npmjs.org/) or [yarn](https://yarnpkg.com)
 Here is a simple example of react-use-confirm-alert being used in a component:
 
 ```jsx
-import { ConfirmAlertProvider } from "react-use-confirm-alert";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { ConfirmAlertProvider } from 'react-use-confirm-alert'
+import App from './App'
 
-export default function App() {
-    return (
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+    <React.StrictMode>
         <ConfirmAlertProvider>
-            <Router>
-                <Navbar/>
-                <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/books/add" element={<AddBook/>}/>
-                    <Route path="/books/edit/:bookId" element={<EditBook/>}/>
-                </Routes>
-            </Router>
+            <App />
         </ConfirmAlertProvider>
-    );
-}
-
-
-import {useConfirmAlert} from "react-use-confirm-alert";
+    </React.StrictMode>
+)
+```
+```jsx
+import { useConfirmAlert } from "react-use-confirm-alert"
 
 export default function Book() {
     const confirmAlert = useConfirmAlert()
@@ -47,6 +44,6 @@ export default function Book() {
         <div>
             <button onClick={handleDelete}>Delete</button>
         </div>
-    );
+    )
 }
 ```
