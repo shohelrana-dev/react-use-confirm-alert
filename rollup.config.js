@@ -11,9 +11,13 @@ module.exports = {
     input: 'src/index.ts',
     output: [
         {
-            dir: 'dist',
+            file: 'dist/index.js',
             format: 'cjs',
-            exports: "named"
+        },
+        {
+            file: 'dist/index.es.js',
+            format: 'es',
+            exports: 'named'
         },
     ],
     external: [...Object.keys(pkg.dependencies || {})],

@@ -1,4 +1,4 @@
-import React, { createContext, PropsWithChildren, useState } from "react"
+import { createContext, PropsWithChildren, useState } from "react"
 import { Modal, useModal } from "react-minimal-modal"
 import { Oval as Loading } from 'react-loader-spinner'
 import classes from "../styles/style.module.css"

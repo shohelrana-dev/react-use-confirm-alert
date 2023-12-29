@@ -1,10 +1,10 @@
 {
   "name": "react-use-confirm-alert",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "MIT",
-  "module": "./dist/index.js",
-  "types": "./dist/esm/index.d.ts",
   "main": "./dist/index.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -cw"
@@ -18,7 +18,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-loader-spinner": "^5.3.4",
+    "react-loader-spinner": "^6.1.6",
     "react-minimal-modal": "^1.1.0"
   },
   "devDependencies": {
@@ -35,6 +35,7 @@
     "postcss": "^8.4.21",
     "rollup": "^3.19.1",
     "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.9.5"
   },
   "keywords": [
