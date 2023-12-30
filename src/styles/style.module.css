@@ -5,6 +5,7 @@
 .message{
     color: rgb(66 66 66);
     margin: 0;
+    font-size: 14px;
 }
 
 .footer{
@@ -16,9 +17,10 @@
 }
 
 .buttonConfirm{
-    background: #0079d3;
-    color: #fff;
+    background: #fff;
+    color: #D11A2A;
     font-size: 14px;
+    font-weight: 500;
     margin: 0;
     padding: 0 18px;
     height: 35px;
@@ -31,10 +33,16 @@
     border: none;
     outline: none;
     cursor: pointer;
+    transition: .2s;
+}
+
+.buttonConfirm:hover{
+    background: #dddddd38;
+    cursor: progress;
 }
 
 .buttonConfirm:disabled{
-    background: #0079d3a6;
+    color: #0079d3a6;
     cursor: progress;
 }
 
@@ -44,6 +52,7 @@
     padding: 0 18px;
     height: 35px;
     font-size: 14px;
+    font-weight: 500;
     color: #000;
     border-radius: 20px;
     min-width: 80px;
