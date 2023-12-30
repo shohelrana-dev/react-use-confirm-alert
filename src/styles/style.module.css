@@ -56,9 +56,9 @@
     border-radius: 20px;
     min-width: 80px;
     transition: .2s;
+    cursor: pointer;
     border: none;
     outline: none;
-    cursor: pointer;
 }
 
 .buttonCancel:hover{
