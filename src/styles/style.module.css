@@ -1,5 +1,8 @@
-.modalCustom{
-    max-width: 450px !important;
+.title{
+    font-size: 22px;
+    color: #000;
+    font-weight: 600;
+    margin: 0 0 15px 0;
 }
 
 .message{
@@ -11,56 +14,57 @@
 .footer{
     margin-top: 20px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     gap: 3px;
 }
 
-.buttonConfirm{
+.button{
     background: #fff;
-    color: #D11A2A;
+    color: #000;
     font-size: 14px;
     font-weight: 500;
+    padding: 8px 12px;
     margin: 0;
-    padding: 0 18px;
-    height: 35px;
-    border-radius: 20px;
-    min-width: 80px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.button:hover{
+    background: #dddddd38;
+}
+
+.button:disabled{
+    color: #979595;
+    cursor: progress;
+}
+
+.buttonConfirm{
+    color: #D11A2A;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    transition: .2s;
-}
-
-.buttonConfirm:hover{
-    background: #dddddd38;
 }
 
 .buttonConfirm:disabled{
-    color: #0079d3a6;
     cursor: progress;
-}
-
-.buttonCancel{
-    background: #fff;
-    margin: 0;
-    padding: 0 18px;
-    height: 35px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #000;
-    border-radius: 20px;
-    min-width: 80px;
-    transition: .2s;
-    cursor: pointer;
-    border: none;
-    outline: none;
-}
-
-.buttonCancel:hover{
     background: #dddddd38;
+    color: #979595;
+}
+
+.loader {
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:conic-gradient(#0000 10%,#AEAEAE);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 3px),#000 0);
+    animation:loader 0.5s infinite linear;
+  }
+  @keyframes loader {
+    to{ transform: rotate(1turn) }
 }
