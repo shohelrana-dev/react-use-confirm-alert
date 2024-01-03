@@ -78,16 +78,16 @@ export default function ConfirmAlertProvider({ children }: PropsWithChildren) {
                     <button
                         className={classes.button}
                         onClick={handleCancel}
-                        disabled={!isLoading}
+                        disabled={isLoading}
                     >
                         {cancelButtonLabel}
                     </button>
                     <button
                         className={`${classes.button} ${classes.buttonConfirm}`}
                         onClick={handleConfirm}
-                        disabled={!isLoading}
+                        disabled={isLoading}
                     >
-                        {!isLoading ? <div className={classes.loader} /> : null}
+                        {isLoading ? <div className={classes.loader} /> : null}
                         {confirmButtonLabel}
                     </button>
                 </div>
