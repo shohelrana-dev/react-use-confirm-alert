@@ -3,6 +3,8 @@ To install, you can use [npm](https://npmjs.org/) or [yarn](https://yarnpkg.com)
     $ npm install --save react-use-confirm-alert
     $ yarn add react-use-confirm-alert
 
+### [Live demo](https://react-use-confirm-alert.netlify.app)
+
 ## Examples
 
 Here is a simple example of react-use-confirm-alert being used in a component:
