@@ -1,7 +1,7 @@
 {
     "name": "react-use-confirm-alert",
     "description": "a confirm alert hook for reactjs project",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "license": "MIT",
     "main": "./dist/index.js",
     "module": "./dist/index.esm.js",
