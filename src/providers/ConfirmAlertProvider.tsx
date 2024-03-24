@@ -47,6 +47,7 @@ export default function ConfirmAlertProvider({ children }: PropsWithChildren) {
             try {
                 await onConfirm()
                 promise?.resolve(true)
+                setIsLoading(false)
                 closeModal()
             } catch (err) {
                 setIsLoading(false)
@@ -63,6 +64,7 @@ export default function ConfirmAlertProvider({ children }: PropsWithChildren) {
             try {
                 await onCancel()
                 promise?.resolve(false)
+                setIsLoading(false)
                 closeModal()
             } catch (err) {
                 setIsLoading(false)
