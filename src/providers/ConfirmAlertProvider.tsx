@@ -1,5 +1,5 @@
 import { createContext, PropsWithChildren, useState } from 'react'
-import { Modal, useToggle } from 'react-minimal-modal'
+import { Modal } from 'react-minimal-modal'
 import classes from '../styles/style.module.css'
 
 export interface AlertOptions {
@@ -23,15 +23,18 @@ export default function ConfirmAlertProvider({ children }: PropsWithChildren) {
         confirmButtonLabel: 'Confirm',
         cancelButtonLabel: 'Cancel',
     })
-    const [isOpen, toggle] = useToggle()
+    const [isOpen, setIsOpen] = useState(false)
     const [promise, setPromise] = useState<TPromise>(null)
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     const { onConfirm, onCancel, confirmButtonLabel, cancelButtonLabel, title, message } = options
 
+    const openModal = () => setIsOpen(true)
+    const closeModal = () => setIsOpen(false)
+
     function confirmAlert(options: AlertOptions): Promise<boolean> {
         setOptions((prevState) => ({ ...prevState, ...options }))
-        toggle()
+        openModal()
         return new Promise<boolean>((resolve) => {
             setPromise({ resolve })
         })
@@ -41,32 +44,40 @@ export default function ConfirmAlertProvider({ children }: PropsWithChildren) {
         if (typeof onConfirm === 'function') {
             setIsLoading(true)
 
-            await onConfirm()
-            promise?.resolve(true)
-            toggle()
-
-            setIsLoading(false)
+            try {
+                await onConfirm()
+                promise?.resolve(true)
+                closeModal()
+            } catch (err) {
+                setIsLoading(false)
+                throw err
+            }
         } else {
             promise?.resolve(true)
-            toggle()
+            closeModal()
         }
     }
 
     async function handleCancel() {
         if (typeof onCancel === 'function') {
-            await onCancel()
-            promise?.resolve(true)
-            toggle()
+            try {
+                await onCancel()
+                promise?.resolve(false)
+                closeModal()
+            } catch (err) {
+                setIsLoading(false)
+                throw err
+            }
         } else {
             promise?.resolve(false)
-            toggle()
+            closeModal()
         }
     }
 
     return (
         <ConfirmAlertContext.Provider value={confirmAlert}>
             {children}
-            <Modal open={isOpen} toggle={toggle} style={{ maxWidth: '450px' }} hideIcon>
+            <Modal open={isOpen} onOpenChange={setIsOpen} style={{ maxWidth: '450px' }} hideIcon>
                 <h2 className={classes.title}>{title}</h2>
                 <p className={classes.message}>{message}</p>
                 <div className={classes.footer}>
@@ -78,7 +89,7 @@ export default function ConfirmAlertProvider({ children }: PropsWithChildren) {
                         onClick={handleConfirm}
                         disabled={isLoading}
                     >
-                        {isLoading ? <div className={classes.loader} /> : null}
+                        {isLoading && <div className={classes.loader} />}
                         {confirmButtonLabel}
                     </button>
                 </div>
