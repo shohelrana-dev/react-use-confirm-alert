@@ -96,7 +96,15 @@ export default function ConfirmAlertProvider({ children }: PropsWithChildren) {
                         onClick={handleConfirm}
                         disabled={isLoading}
                     >
-                        {isLoading && <img src={loader} width={16} height={16} alt='loader image' />}
+                        {isLoading && (
+                            <img
+                                src={loader}
+                                width={16}
+                                height={16}
+                                alt='loader image'
+                                style={{ width: '16px', height: '16px' }}
+                            />
+                        )}
                         {confirmButtonLabel}
                     </button>
                 </div>
