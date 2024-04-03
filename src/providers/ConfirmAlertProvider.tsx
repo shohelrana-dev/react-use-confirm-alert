@@ -1,6 +1,8 @@
 import { createContext, PropsWithChildren, useState } from 'react'
 import { Modal } from 'react-minimal-modal'
 import classes from '../styles/style.module.css'
+//@ts-ignore
+import loader from '../assets/loader.gif'
 
 export interface AlertOptions {
     title?: string
@@ -79,9 +81,12 @@ export default function ConfirmAlertProvider({ children }: PropsWithChildren) {
     return (
         <ConfirmAlertContext.Provider value={confirmAlert}>
             {children}
-            <Modal open={isOpen} onOpenChange={setIsOpen} style={{ maxWidth: '450px' }} hideIcon>
+
+            <Modal open={isOpen} onOpenChange={setIsOpen} width={450} hideIcon>
                 <h2 className={classes.title}>{title}</h2>
+
                 <p className={classes.message}>{message}</p>
+
                 <div className={classes.footer}>
                     <button className={classes.button} onClick={handleCancel} disabled={isLoading}>
                         {cancelButtonLabel}
@@ -91,7 +96,7 @@ export default function ConfirmAlertProvider({ children }: PropsWithChildren) {
                         onClick={handleConfirm}
                         disabled={isLoading}
                     >
-                        {isLoading && <div className={classes.loader} />}
+                        {isLoading && <img src={loader} width={16} height={16} alt='loader image' />}
                         {confirmButtonLabel}
                     </button>
                 </div>

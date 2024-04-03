@@ -1,11 +1,12 @@
-import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import typescript from '@rollup/plugin-typescript'
-import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
-import { terser } from 'rollup-plugin-terser'
-import { dts } from 'rollup-plugin-dts'
-import postcss from 'rollup-plugin-postcss-modules'
+import image from '@rollup/plugin-image'
+import resolve from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
 import autoprefixer from 'autoprefixer'
+import { dts } from 'rollup-plugin-dts'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import postcss from 'rollup-plugin-postcss-modules'
+import { terser } from 'rollup-plugin-terser'
 
 // This is required to read package.json file when
 // using Native ES modules in Node.js
@@ -35,8 +36,9 @@ export default [
             commonjs(),
             terser(),
             postcss({
-                plugins: [autoprefixer()]
+                plugins: [autoprefixer()],
             }),
+            image({ extensions: /\.(png|jpg|jpeg|gif|svg)$/, limit: 10000 }),
         ],
     },
     {

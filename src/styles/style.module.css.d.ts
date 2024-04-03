@@ -6,13 +6,12 @@ export const button: string
 export const buttonConfirm: string
 export const loader: string
 interface Namespace {
-	"modalCustom": string,
-	"title": string,
-	"message": string,
-	"footer": string,
-	"button": string,
-	"buttonConfirm": string,
-	"loader": string,
+    modalCustom: string
+    title: string
+    message: string
+    footer: string
+    button: string
+    buttonConfirm: string
 }
 declare const styleModule: Namespace
 export default styleModule

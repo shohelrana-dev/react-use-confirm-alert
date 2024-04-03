@@ -1,7 +1,7 @@
 {
     "name": "react-use-confirm-alert",
-    "description": "a confirm alert hook for reactjs project",
-    "version": "2.0.4",
+    "description": "a confirm alert hook for reactjs",
+    "version": "2.0.6",
     "license": "MIT",
     "main": "./dist/index.js",
     "module": "./dist/index.esm.js",
@@ -48,7 +48,8 @@
         "build-storybook": "storybook build"
     },
     "dependencies": {
-        "react-minimal-modal": "^2.0.2"
+        "@rollup/plugin-image": "^3.0.3",
+        "react-minimal-modal": "^2.1.0"
     },
     "peerDependencies": {
         "react": "^18.2.0",
